@@ -1,0 +1,38 @@
+let workTime = 25 * 60;
+let shortBreak = 5 * 60;
+let longBreak = 15 * 60;
+let cycles = 4;
+let currentCycle = 0;
+
+function startPomodoro() {
+  currentCycle = 0;
+  runCycle();
+}
+
+function runCycle() {
+  if (currentCycle < cycles) {
+    countdown(workTime, "کار - چرخه " + (currentCycle + 1), () => {
+      currentCycle++;
+      countdown(shortBreak, "استراحت کوتاه", runCycle);
+    });
+  } else {
+    countdown(longBreak, "استراحت بلند", () => {
+      document.getElementById("status").innerText = "پایان پومودورو 🎉";
+    });
+  }
+}
+
+function countdown(seconds, label, callback) {
+  document.getElementById("status").innerText = label;
+  let timer = seconds;
+  let interval = setInterval(() => {
+    let mins = Math.floor(timer / 60);
+    let secs = timer % 60;
+    document.getElementById("timer").innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    timer--;
+    if (timer < 0) {
+      clearInterval(interval);
+      callback();
+    }
+  }, 1000);
+}

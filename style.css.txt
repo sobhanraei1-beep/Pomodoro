@@ -1,0 +1,31 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Tahoma', sans-serif;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+#timer {
+  font-size: 48px;
+  margin: 20px 0;
+  color: lightgreen;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تایمر پومودورو</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍅 تایمر پومودورو</h1>
+    <h2 id="status">آماده شروع</h2>
+    <div id="timer">25:00</div>
+    <button onclick="startPomodoro()">شروع</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
